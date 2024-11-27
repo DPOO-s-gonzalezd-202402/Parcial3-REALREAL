@@ -1,7 +1,6 @@
 package control;
 
 import logica.Figura;
-import logica.ListaDoble;
 import presentacion.PFormulario;
 import presentacion.PLienzo;
 

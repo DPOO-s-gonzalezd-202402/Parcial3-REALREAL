@@ -25,7 +25,7 @@ public class FFigura extends JFrame {
 		this.setLayout(new BorderLayout());
 		this.pLienzo = new PLienzo();
 		this.pEstado = new PEstado();
-		this.pFormulario = new PFormulario}(this);
+		this.pFormulario = new PFormulario(this);
 		
 		this.add(this.pFormulario, BorderLayout.WEST);
 		this.add(this.pLienzo, BorderLayout.CENTER);

@@ -67,7 +67,7 @@ public class PFormulario extends JPanel {
 		try {
 			this.controlador.insertarCuadrado(Integer.parseInt(this.r.getText()), Integer.parseInt(this.g.getText()), Integer.parseInt(this.b.getText()));
 		} catch (NumberFormatException e) {
-			JOptionPane.showMessageDialog(this.fFigura, "Los canales de color son numéricos", "Error", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(this.fFigura, "Los canales de color son numéricos entre 0 y 255", "Error", JOptionPane.ERROR_MESSAGE);
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(this.fFigura, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
 		}
@@ -77,7 +77,7 @@ public class PFormulario extends JPanel {
 		try {
 			this.controlador.insertarCirculo(Integer.parseInt(this.r.getText()), Integer.parseInt(this.g.getText()), Integer.parseInt(this.b.getText()));
 		} catch (NumberFormatException e) {
-			JOptionPane.showMessageDialog(this.fFigura, "El id es numerico", "Error", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(this.fFigura, "Los canales de color son numéricos entre 0 y 255", "Error", JOptionPane.ERROR_MESSAGE);
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(this.fFigura, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
 		}
