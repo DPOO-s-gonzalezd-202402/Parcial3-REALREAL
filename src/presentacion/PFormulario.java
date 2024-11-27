@@ -30,7 +30,7 @@ public class PFormulario extends JPanel {
 		this.r = new JTextField();
 		this.g = new JTextField();
 		this.b = new JTextField();
-		this.bCuadrado = new JButton("Insertar");
+		this.bCuadrado = new JButton("Cuadrado");
 		this.bCuadrado.addActionListener(new ActionListener() {
 			
 			@Override
@@ -39,7 +39,7 @@ public class PFormulario extends JPanel {
 				
 			}
 		});
-		this.bCirculo = new JButton("Insertar");
+		this.bCirculo = new JButton("Circulo");
 		this.bCirculo.addActionListener(new ActionListener() {
 			
 			@Override

@@ -17,7 +17,6 @@ public class PLienzo extends JPanel implements Observer {
 		Graphics2D g2d = (Graphics2D)g;
 		g2d.setColor(new Color(255, 255, 255));
 		g2d.fillRect(0, 0, this.getWidth(), this.getHeight());
-		g2d.setColor(new Color(0, 0, 255));
 		if (this.figurin[0]==0) {
 			//como es o hago cuadrado
 			g2d.setColor(new Color(figurin[1], figurin[2], figurin[3]));
