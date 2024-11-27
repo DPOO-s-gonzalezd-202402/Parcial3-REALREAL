@@ -13,53 +13,74 @@ import javax.swing.JTextField;
 import control.Controlador;
 
 public class PFormulario extends JPanel {
-	private JTextField tId;
-	private JTextField tNombre;
-	private JTextField tApellido;
-	private JButton bInsertar;
+	private JTextField r;
+	private JTextField g;
+	private JTextField b;
+	private JButton bCuadrado;
+	private JButton bCirculo;
 	private Controlador controlador;
-	private FListaDoble fListaDoble;
+	private FFigura fFigura;
 	
-	public FListaDoble getfListaDoble() {
-		return fListaDoble;
+	public FFigura getfFigura() {
+		return fFigura;
 	}
 
-	public PFormulario(FListaDoble fListaDoble) {
-		this.fListaDoble = fListaDoble;
-		this.tId = new JTextField();
-		this.tNombre = new JTextField();
-		this.tApellido = new JTextField();
-		this.bInsertar = new JButton("Insertar");
-		this.bInsertar.addActionListener(new ActionListener() {
+	public PFormulario(FFigura fFigura) {
+		this.fFigura = fFigura;
+		this.r = new JTextField();
+		this.g = new JTextField();
+		this.b = new JTextField();
+		this.bCuadrado = new JButton("Insertar");
+		this.bCuadrado.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				insertar();
+				insertarCuadrado();
 				
 			}
 		});
+		this.bCirculo = new JButton("Insertar");
+		this.bCirculo.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				insertarCirculo();
+				
+			}
+		});
+		
 		this.controlador = new Controlador(this);
 		this.setLayout(new GridLayout(4, 2, 10, 10));
-		this.add(new JLabel("Id"));
-		this.add(this.tId);
-		this.add(new JLabel("Nombre"));
-		this.add(this.tNombre);
-		this.add(new JLabel("Apellido"));
-		this.add(this.tApellido);
-		this.add(this.bInsertar);
+		this.add(new JLabel("R"));
+		this.add(this.r);
+		this.add(new JLabel("G"));
+		this.add(this.g);
+		this.add(new JLabel("B"));
+		this.add(this.b);
+		this.add(this.bCuadrado);
+		this.add(this.bCirculo);
 		
 		
 	}
 
-	public void insertar() {
+	public void insertarCuadrado() {
 		try {
-			this.controlador.insertar(Integer.parseInt(this.tId.getText()), this.tNombre.getText(), this.tApellido.getText());
+			this.controlador.insertarCuadrado(Integer.parseInt(this.r.getText()), Integer.parseInt(this.g.getText()), Integer.parseInt(this.b.getText()));
 		} catch (NumberFormatException e) {
-			JOptionPane.showMessageDialog(this.fListaDoble, "El id es numerico", "Error", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(this.fFigura, "Los canales de color son numéricos", "Error", JOptionPane.ERROR_MESSAGE);
 		} catch (Exception e) {
-			JOptionPane.showMessageDialog(this.fListaDoble, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(this.fFigura, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
 		}
 	}
 	
+	public void insertarCirculo() {
+		try {
+			this.controlador.insertarCirculo(Integer.parseInt(this.r.getText()), Integer.parseInt(this.g.getText()), Integer.parseInt(this.b.getText()));
+		} catch (NumberFormatException e) {
+			JOptionPane.showMessageDialog(this.fFigura, "El id es numerico", "Error", JOptionPane.ERROR_MESSAGE);
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(this.fFigura, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+		}
+	}
 	
 }

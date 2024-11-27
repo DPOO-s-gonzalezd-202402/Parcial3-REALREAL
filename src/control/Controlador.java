@@ -1,22 +1,27 @@
 package control;
 
+import logica.Figura;
 import logica.ListaDoble;
 import presentacion.PFormulario;
 import presentacion.PLienzo;
 
 public class Controlador {
-	private ListaDoble listaDoble;
+	private Figura figura;
 	private PFormulario pFormulario;
 	
 	
 	public Controlador(PFormulario pFormulario) {
 		this.pFormulario = pFormulario;
-		this.listaDoble = new ListaDoble();
-		this.listaDoble.addObserver(this.pFormulario.getfListaDoble().getpLienzo());
-		this.listaDoble.addObserver(this.pFormulario.getfListaDoble().getpEstado());
+		this.figura = new Figura();
+		this.figura.addObserver(this.pFormulario.getfFigura().getpLienzo());
+		this.figura.addObserver(this.pFormulario.getfFigura().getpEstado());
 	}
 
-	public void insertar(int id, String nombre, String apellido) throws Exception {
-		this.listaDoble.insertarNodo(id, nombre, apellido);
+	public void insertarCuadrado(int r, int g, int b) throws Exception {
+		this.figura.insertarCuadrado(r,g,b);
+	}
+	
+	public void insertarCirculo(int r, int g, int b) throws Exception {
+		this.figura.insertarCirculo(r,g,b);
 	}
 }

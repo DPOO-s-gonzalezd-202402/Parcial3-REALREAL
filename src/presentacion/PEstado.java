@@ -12,15 +12,15 @@ public class PEstado extends JPanel implements Observer {
 	private JLabel lCantidad;
 	
 	public PEstado() {
-		this.lCantidad = new JLabel("0 nodos");
+		this.lCantidad = new JLabel("Ingrese figura");
 		this.setLayout(new FlowLayout());
 		this.add(this.lCantidad);
 	}
 	
 	@Override
 	public void update(Observable o, Object arg) {
-		ArrayList<Integer> ids = (ArrayList<Integer>)arg;
-		this.lCantidad.setText(ids.size() + (ids.size()==1?" nodo":" nodos"));
+		int[] ids = (int[])arg;
+		this.lCantidad.setText("Dibujando figuritas");
 	}
 	
 	
